@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+</head>
+<body>
+    <h1>Jogo de Adivinhação</h1>
+    <p>O computador pensou em um número entre 1 e 10. Tente adivinhar qual é!</p>
+    
+    <label for="guess">Qual número você acha que o computador pensou?</label>
+    <input type="number" id="guess" placeholder="Digite seu palpite">
+    <button onclick="adivinhar()">Adivinhar</button>
+ 
+    <p id="resultado"></p>
+ 
+    <script>
+        // Função para gerar um número aleatório entre 1 e 100
+        let numeroPensado = Math.floor(Math.random() * 10) + 1;
+ 
+        // Função para adivinhar o número
+        function adivinhar() {
+            // Pegando o valor digitado no input
+            let palpite = document.getElementById("guess").value;
+            let resultado = document.getElementById("resultado");
+ 
+            // Verificando se o palpite é igual ao número pensado
+            if (palpite == numeroPensado) {
+                resultado.innerHTML = "Parabéns! O número que eu pensei foi " + numeroPensado + ".";
+            } else {
+                resultado.innerHTML = "Você perdeu! Eu tinha pensado no número " + numeroPensado + ".";
+            }
+        }
+    </script>
+</body>
+</html>

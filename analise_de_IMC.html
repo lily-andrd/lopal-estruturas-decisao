@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let peso = prompt("Digite seu peso em kg");
+        let altura = prompt("Digite sua altura em metros");
+        
+        let IMC = peso / (altura * altura);
+        document.write("Seu IMC é : " + IMC.toFixed(2));
+
+        if (IMC >= 18.5 && IMC <= 35) {
+            document.write(" Parabéns, seu IMC está dentro do intervalo saudável!");
+        } else if (IMC < 18.5) {
+            document.write(" Seu IMC indica que você está abaixo do peso!");
+        } else if (IMC > 35) {
+            document.write(" Seu IMC indica que você está acima do peso!");
+        }
+    </script>
+
+</body>
+</html>

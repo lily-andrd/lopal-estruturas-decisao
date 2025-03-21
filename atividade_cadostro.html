@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <input id="nome" placeholder="Nome">
+    <button onclick="cadastrar()">Adicionar</button>
+    <button onclick="remover()">Remover</button>
+    <p id="lista"></p>
+
+    <script>
+        let alunos = [];
+        function cadastrar() {
+            let nome = document.getElementById('nome').value;
+            if (nome) {
+                alunos.push(nome);
+                atualizar();
+            }
+        }
+        function remover() {
+            alunos.pop();
+            atualizar();
+        }
+        function atualizar() {
+            document.getElementById('lista').innerHTML = alunos.join('<br>');
+        }
+    </script>
+</body>
+</html>
